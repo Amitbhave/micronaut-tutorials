@@ -1,5 +1,8 @@
 package com.amitb.qualifier;
 
+import javax.inject.Singleton;
+
+@Singleton
 public class MyApplication2 {
 
     private final Logger logger;

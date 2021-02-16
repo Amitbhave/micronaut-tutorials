@@ -9,11 +9,11 @@ import javax.inject.Inject;
 class MyApplication2Test {
 
     @Inject
-    private MyApplication myApplication;
+    private MyApplication2 myApplication2;
 
     @Test
     void shouldLogToConsole() {
-        myApplication.process();
+        myApplication2.process();
     }
 
 }
