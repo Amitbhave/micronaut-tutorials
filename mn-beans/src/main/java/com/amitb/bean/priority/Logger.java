@@ -1,4 +1,4 @@
-package com.amitb.qualifier;
+package com.amitb.bean.priority;
 
 public interface Logger {
 

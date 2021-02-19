@@ -1,4 +1,4 @@
-package com.amitb.priority;
+package com.amitb.bean.qualifier;
 
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.junit.jupiter.api.Test;
@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 import javax.inject.Inject;
 
 @MicronautTest
-class MyApplicationTest {
+class MyApplication2Test {
 
     @Inject
-    private MyApplication myApplication;
+    private MyApplication2 myApplication2;
 
     @Test
-    void shouldLogToFile() {
-        myApplication.process();
+    void shouldLogToConsole() {
+        myApplication2.process();
     }
 
 }

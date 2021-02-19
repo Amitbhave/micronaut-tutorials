@@ -1,4 +1,4 @@
-package com.amitb.qualifier;
+package com.amitb.bean.qualifier;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
