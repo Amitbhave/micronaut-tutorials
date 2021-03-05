@@ -1,5 +1,6 @@
 package com.udemy.service;
 
+import com.udemy.exception.UserNotFoundException;
 import com.udemy.model.User;
 
 import javax.inject.Singleton;
@@ -24,7 +25,7 @@ public class UserService {
         return users.stream()
                 .filter(user -> user.getId() == id)
                 .findFirst()
-                .orElse(null);
+                .orElseThrow(() -> new UserNotFoundException());
     }
 
     public User updateUser(int id, User user) {
