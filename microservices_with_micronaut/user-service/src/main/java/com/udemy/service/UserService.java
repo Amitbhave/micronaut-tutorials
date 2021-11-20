@@ -2,8 +2,8 @@ package com.udemy.service;
 
 import com.udemy.exception.UserNotFoundException;
 import com.udemy.model.User;
+import jakarta.inject.Singleton;
 
-import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 
