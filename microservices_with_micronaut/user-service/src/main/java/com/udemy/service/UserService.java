@@ -2,30 +2,31 @@ package com.udemy.service;
 
 import com.udemy.exception.UserNotFoundException;
 import com.udemy.model.User;
+import com.udemy.repository.UserRepository;
 import jakarta.inject.Singleton;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Singleton
 public class UserService {
 
-    private List<User> users = new ArrayList<>();
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public User createUser(User user) {
-        users.add(user);
-        return user;
+        return userRepository.save(user);
     }
 
     public List<User> getAllUsers() {
-        return users;
+        return userRepository.findAll();
     }
 
     public User getUser(int id) {
-        return users.stream()
-                .filter(user -> user.getId() == id)
-                .findFirst()
-                .orElseThrow(() -> new UserNotFoundException());
+        return userRepository.findById(id)
+                .orElseThrow(UserNotFoundException::new);
     }
 
     public User updateUser(int id, User user) {
@@ -34,12 +35,11 @@ public class UserService {
         prevUser.setMobileNumber(user.getMobileNumber());
         prevUser.setEmail(user.getEmail());
 
-        return prevUser;
+        return userRepository.update(prevUser);
     }
 
     public void deleteUser(int id) {
-        User userToBeDeleted = getUser(id);
-        users.remove(userToBeDeleted);
+        userRepository.deleteById(id);
     }
 
 }

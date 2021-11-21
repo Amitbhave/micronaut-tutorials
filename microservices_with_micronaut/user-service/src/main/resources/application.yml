@@ -1,3 +1,17 @@
 micronaut:
   application:
     name: userService
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/user-db
+    username: root
+    password: root
+    schema-generate: CREATE_DROP
+    dialect: MYSQL
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
