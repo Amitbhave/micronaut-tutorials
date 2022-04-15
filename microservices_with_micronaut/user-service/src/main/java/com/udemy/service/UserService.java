@@ -24,6 +24,10 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public long getUserCount() {
+        return userRepository.count();
+    }
+
     public User getUser(int id) {
         return userRepository.findById(id)
                 .orElseThrow(UserNotFoundException::new);
