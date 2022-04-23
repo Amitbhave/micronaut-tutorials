@@ -21,3 +21,6 @@ flyway:
   datasources:
     default:
       enabled: true
+shedlock:
+  defaults:
+    lock-at-most-for: 1m
