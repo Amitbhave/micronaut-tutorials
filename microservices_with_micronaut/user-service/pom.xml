@@ -10,15 +10,15 @@
   <parent>
     <groupId>io.micronaut</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>3.1.4</version>
+    <version>3.6.1</version>
   </parent>
 
   <properties>
     <packaging>jar</packaging>
     <jdk.version>11</jdk.version>
     <release.version>11</release.version>
-    <micronaut.version>3.1.4</micronaut.version>
-    <micronaut.data.version>3.2.0</micronaut.data.version>
+    <micronaut.version>3.6.1</micronaut.version>
+    <micronaut.data.version>3.7.3</micronaut.data.version>
     <exec.mainClass>com.udemy.Application</exec.mainClass>
     <micronaut.runtime>netty</micronaut.runtime>
   </properties>
@@ -90,6 +90,10 @@
       <groupId>io.micronaut.flyway</groupId>
       <artifactId>micronaut-flyway</artifactId>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-mysql</artifactId>
     </dependency>
     <dependency>
       <groupId>net.javacrumbs.shedlock</groupId>
