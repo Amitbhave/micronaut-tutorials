@@ -1,6 +1,7 @@
 package com.udemy.controller;
 
 import com.udemy.model.User;
+import com.udemy.model.UserResponse;
 import com.udemy.service.UserService;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Body;
@@ -34,8 +35,8 @@ public class UserController {
     }
 
     @Get("/{id}")
-    public HttpResponse<User> getUser(@PathVariable int id) {
-        return HttpResponse.ok(userService.getUser(id));
+    public HttpResponse<UserResponse> getUser(@PathVariable int id) {
+        return HttpResponse.ok(userService.getUserDetails(id));
     }
 
     @Put("/{id}")
